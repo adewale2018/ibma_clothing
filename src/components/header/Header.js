@@ -6,6 +6,7 @@ import "./Header.css";
 import { auth } from "../../firebase/firebase.utils";
 
 function Header({ currentUser }) {
+  console.log("CURRTUSER", currentUser);
   return (
     <header className='header'>
       <Link to='/' className='logo-container'>
@@ -26,7 +27,9 @@ function Header({ currentUser }) {
             SIGN OUT
           </div>
         ) : (
-          <Link className='option' to='/signin'>SIGN IN</Link>
+          <Link className='option' to='/signin'>
+            SIGN IN
+          </Link>
         )}
       </div>
     </header>
