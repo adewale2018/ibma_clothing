@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Logo from "../../assets/download.png";
 import "./Header.css";
@@ -35,4 +36,8 @@ function Header({ currentUser }) {
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Header);
