@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import Logo from "../../assets/download.png";
+import Logo from "../../assets/crown2.png";
 import "./Header.css";
 import { auth } from "../../firebase/firebase.utils";
+import CartIcon from "../cart-icon/CartIcon";
 
 function Header({ currentUser }) {
   return (
@@ -23,14 +24,15 @@ function Header({ currentUser }) {
           CONTACT
         </Link>
         {currentUser ? (
-          <div className='option' onClick={() => auth.signOut()}>
+          <Link className='option' onClick={() => auth.signOut()}>
             SIGN OUT
-          </div>
+          </Link>
         ) : (
           <Link className='option' to='/signin'>
             SIGN IN
           </Link>
         )}
+        <CartIcon />
       </div>
     </header>
   );
