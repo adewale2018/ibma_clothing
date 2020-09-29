@@ -6,6 +6,7 @@ import Logo from "../../assets/crown2.png";
 import "./Header.css";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/CartIcon";
+import CartDropdown from "../cart-dropdown/CartDropdown";
 
 function Header({ currentUser }) {
   return (
@@ -34,6 +35,7 @@ function Header({ currentUser }) {
         )}
         <CartIcon />
       </div>
+      <CartDropdown />
     </header>
   );
 }
