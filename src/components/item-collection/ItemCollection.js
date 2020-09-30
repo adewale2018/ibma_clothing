@@ -1,5 +1,7 @@
 import React from "react";
-import './ItemCollection.css';
+
+import "./ItemCollection.css";
+import CustomButton from "../custom-button/CustomButton";
 
 function ItemCollection({ id, name, imageUrl, price }) {
   return (
@@ -15,6 +17,7 @@ function ItemCollection({ id, name, imageUrl, price }) {
         <span className='name'>{name}</span>
         <span className='price'>${price}</span>
       </div>
+      <CustomButton inverted>Add To Cart</CustomButton>
     </div>
   );
 }

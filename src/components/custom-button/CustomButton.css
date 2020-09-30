@@ -13,11 +13,18 @@
   font-weight: bolder;
   border: none;
   cursor: pointer;
-  transition: .3s all ease-in;
-  -webkit-transition: .3s all ease-in;
-  -moz-transition: .3s all ease-in;
-  -ms-transition: .3s all ease-in;
-  -o-transition: .3s all ease-in;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  -moz-transition: 0.3s all ease-in;
+  -ms-transition: 0.3s all ease-in;
+  -o-transition: 0.3s all ease-in;
+}
+.custom-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 .google-sign-in {
   background-color: #4285f4;
@@ -27,8 +34,15 @@
   background-color: #357ae8;
   border: none;
 }
-.custom-button:hover {
+
+.custom-button .inverted {
   background-color: white;
   color: black;
   border: 1px solid black;
+}
+
+.custom-button .inverted:hover {
+  background-color: black;
+  color: white;
+  border: none;
 }
