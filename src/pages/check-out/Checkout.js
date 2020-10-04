@@ -8,6 +8,7 @@ import {
   selectCartTotal,
   selectCartItems,
 } from "../../redux/cart/cart.selector";
+import { } from '../../redux/shop/shop.selectors'
 
 function Checkout({ cartItems, total }) {
   return (
