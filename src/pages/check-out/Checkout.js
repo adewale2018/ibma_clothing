@@ -20,10 +20,10 @@ function Checkout({ cartItems, total }) {
           <span>Description</span>
         </div>
         <div className='checkout-block'>
-          <span>Quantity</span>
+          <span>Price($)</span>
         </div>
         <div className='checkout-block'>
-          <span>Price</span>
+          <span>Quantity</span>
         </div>
         <div className='checkout-block'>
           <span>Remove</span>
