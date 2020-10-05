@@ -16,8 +16,4 @@ export const selectShopData = createSelector(
 );
 
 export const selectCollection = (collectionUrlParams) =>
-  createSelector([selectShopData], (shopData) =>
-  shopData.find(
-      (collection) => collection.id === COLLECTION_ID_MAP[collectionUrlParams]
-    )
-  );
+  createSelector([selectShopData], (shopData) => shopData[collectionUrlParams]);

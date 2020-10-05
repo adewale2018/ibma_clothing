@@ -3,6 +3,7 @@
     "firestore",
     "middlewares",
     "persistor",
+    "shopdata",
     "signin"
   ]
 }
