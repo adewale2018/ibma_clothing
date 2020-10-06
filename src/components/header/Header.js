@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import Logo from "../../assets/crown2.png";
-import "./Header.css";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/CartIcon";
 import CartDropdown from "../cart-dropdown/CartDropdown";
@@ -29,7 +28,7 @@ function Header({ currentUser, hidden }) {
         {currentUser ? (
           <OptionLink onClick={() => auth.signOut()}>SIGN OUT</OptionLink>
         ) : (
-          <OptionLink as='div' to='/signin'>
+          <OptionLink to='/signin'>
             SIGN IN
           </OptionLink>
         )}
