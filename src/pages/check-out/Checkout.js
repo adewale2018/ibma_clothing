@@ -9,6 +9,7 @@ import {
   selectCartItems,
 } from "../../redux/cart/cart.selector";
 import { } from '../../redux/shop/shop.selectors'
+import StripeCheckoutButton from '../../components/stripe/StripeCheckoutButton';
 
 function Checkout({ cartItems, total }) {
   return (
@@ -36,6 +37,12 @@ function Checkout({ cartItems, total }) {
       <div className='total'>
         <span>Total: ${total}</span>
       </div>
+      <div className="test-warning">
+        ** Please you the following for the following test credit card for payment **
+        <br />
+        Card No: 4242 4242 4242 Exp: 01/20 Cvv: 123
+      </div>
+      <StripeCheckoutButton price={total} />
     </div>
   );
 }
