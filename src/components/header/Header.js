@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -10,43 +9,37 @@ import CartIcon from "../cart-icon/CartIcon";
 import CartDropdown from "../cart-dropdown/CartDropdown";
 import { selectCartHidden } from "../../redux/cart/cart.selector";
 import { selectCurrentUser } from "../../redux/user/user.selector";
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
+} from "./Header.styles";
 
 function Header({ currentUser, hidden }) {
   return (
-    <header className='header'>
-      <Link to='/' className='logo-container'>
+    <HeaderContainer>
+      <LogoContainer to='/'>
         <img src={Logo} alt='A crown' className='logo' />
-      </Link>
-      <div className='options'>
-        <Link className='option' to='/'>
-          HOME
-        </Link>
-        <Link className='option' to='/shop'>
-          SHOP
-        </Link>
-        <Link className='option' to='/contact'>
-          CONTACT
-        </Link>
+      </LogoContainer>
+      <OptionsContainer>
+        <OptionLink to='/'>HOME</OptionLink>
+        <OptionLink to='/shop'>SHOP</OptionLink>
+        <OptionLink to='/contact'>CONTACT</OptionLink>
         {currentUser ? (
-          <Link className='option' onClick={() => auth.signOut()}>
-            SIGN OUT
-          </Link>
+          <OptionLink onClick={() => auth.signOut()}>SIGN OUT</OptionLink>
         ) : (
-          <Link className='option' to='/signin'>
+          <OptionLink as='div' to='/signin'>
             SIGN IN
-          </Link>
+          </OptionLink>
         )}
         <CartIcon />
-      </div>
+      </OptionsContainer>
       {hidden ? null : <CartDropdown />}
-    </header>
+    </HeaderContainer>
   );
 }
 
-// const mapStateToProps = (state) => ({
-//   currentUser: selectCurrentUser(state),
-//   hidden: selectCartHidden(state),
-// });
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
